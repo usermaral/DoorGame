@@ -8,12 +8,14 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    
+    lazy var coordinator = {
+        return Coordinator(controller: self)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        coordinator.setEnvironment()
     }
-
-
 }
 
