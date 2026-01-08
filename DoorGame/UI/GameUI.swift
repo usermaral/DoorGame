@@ -38,8 +38,6 @@ final class GameUI {
     
     lazy var buttonView: UIView = {
         $0.frame.size = CGSize(width: (bounds?.width ?? .zero) - 60, height: 315)
-        $0.addSubview(leftDoor)
-        $0.addSubview(rightDoor)
         return $0
     }(UIView())
     
@@ -52,7 +50,7 @@ final class GameUI {
     lazy var incorrectlabel = createTextLabel(labelText: .incorrect, fontSize: 20, color: .incorrect)
     lazy var scoreLabel = createTextLabel(labelText: .score, fontSize: 30)
     lazy var scoreValue = createTextLabel(labelText: .zero, fontSize: 30)
-    lazy var description = getDescriptionLabel(score: 5)
+    lazy var description = getDescriptionLabel(score: 0)
     
     private func getDescriptionLabel(score: Int) -> UILabel {
         return {
@@ -116,7 +114,7 @@ enum LabelStrings: String {
         switch score {
         case 0:
             return ""
-        case 5:
+        case 2:
             return "Not bad! Your instincts are working."
         case 10:
             return "You’re reading the game."
